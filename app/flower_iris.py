@@ -1,7 +1,10 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+from typing import Optional
 
 class FlowerIrisRequestData(BaseModel):
-    FlowerID: str
+    FlowerID: str = Field(
+        title="Unique flower id", max_length=4
+    )
     SepalLength: float
     SepalWidth: float
     PetalLength: float

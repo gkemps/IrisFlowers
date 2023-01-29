@@ -139,3 +139,18 @@ def test_wrong_type():
         },
     )
     assert response.status_code == 422    
+
+def test_long_flower_id():
+    response = client.post(
+        "/GetFlowerIrisClass",
+        json={
+            "FlowerIrisRequestData": {
+                "FlowerID": "00012",
+                "SepalLength": "5.1",
+                "SepalWidth": "3.5",
+                "PetalLength": "1.4",
+                "PetalWidth": "0.2"
+            }
+        },
+    )
+    assert response.status_code == 422
