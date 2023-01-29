@@ -5,10 +5,10 @@ class FlowerIrisRequestData(BaseModel):
     FlowerID: str = Field(
         title="Unique flower id", max_length=4
     )
-    SepalLength: float
-    SepalWidth: float
-    PetalLength: float
-    PetalWidth: float
+    SepalLength: float = Field(ge=0.0)
+    SepalWidth: float = Field(ge=0.0)
+    PetalLength: float = Field(ge=0.0)
+    PetalWidth: float = Field(ge=0.0)
 
 class GetFlowerIrisClassRequest(BaseModel):
     FlowerIrisRequestData: FlowerIrisRequestData
