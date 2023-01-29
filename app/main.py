@@ -21,6 +21,15 @@ def predict_species(data: GetFlowerIrisClassRequest):
         data.FlowerIrisRequestData.PetalWidth
         ]])
 
+    if prediction.size < 1 or prediction[0] < 0 or prediction[0] > 2:
+        return {
+            'FlowerIrisResponseData': {
+                'FlowerID': data.FlowerIrisRequestData.FlowerID,
+                'ReturnCode': 1,
+                'ErrorMessage': 'something went wrong'
+            },
+        }
+
     irisClass = ""
     if prediction[0] == 0: 
         irisClass = "Setosa"
