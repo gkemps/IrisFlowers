@@ -2,3 +2,5 @@ joblib
 fastapi
 uvicorn
 scikit-learn
+pytest
+httpx

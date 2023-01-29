@@ -11,4 +11,4 @@ EXPOSE 80
 
 WORKDIR /build/app
 
-CMD python -m uvicorn main:app --host 0.0.0.0 --port 800
+CMD python -m uvicorn main:app --host 0.0.0.0 --port 80
